@@ -1,4 +1,47 @@
-<html></html>
-<p>Test</p>
-
-<p>Jeg liker pizza</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Spinning Pizza</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        display: grid;
+        place-items: center;
+        background: #fff;
+      }
+      .pizza-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+      }
+      .pizza {
+        width: min(60vmin, 420px);
+        height: auto;
+        animation: spin 4s linear infinite;
+        transform-origin: 50% 50%;
+        filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
+      }
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pizza-container" aria-hidden="true">
+      <img src="Pizza.gif" alt="Pizza" />
+    </div>
+  </body>
+</html>
